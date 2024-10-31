@@ -1,0 +1,13 @@
+---
+- name: Configure vlans
+  hosts: switches
+
+  tasks:
+    - name: Retrieve Junos OS version
+      junipernetworks.junos.junos_command:
+        commands: show version
+      register: output
+
+    - name: Print output
+      debug:
+        var: output.stdout_lines
