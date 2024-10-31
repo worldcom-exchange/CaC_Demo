@@ -1,13 +1,30 @@
 ---
 - name: Configure vlans
   hosts: switches
+  gather_facts: no
+  vars:
+    vlans:
+      - name: VLAN10
+        vlan_id: 10
+      - name: VLAN20
+        vlan_id: 20
+      - name: VLAN30
+        vlan_id: 30
 
   tasks:
-    - name: Retrieve Junos OS version
-      junipernetworks.junos.junos_command:
-        commands: show version
+    - name: Create VLANs
+      juniper_junos_config:
+        lines:
+          - "set vlans {{ item.name }} vlan-id {{ item.vlan_id }}"
+        commit: yes
+      loop: "{{ vlans }}"
+      when: item.vlan_id is defined
+
+    - name: Get vlans
+      ios_command:
+        commands: show vlans
       register: output
 
-    - name: Print output
+    - name: Print vlans
       debug:
         var: output.stdout_lines
