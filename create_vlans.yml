@@ -17,9 +17,10 @@
         config:
           - name: "{{ item.name }}"
             vlan_id: "{{ item.vlan_id }}"
-        loop: "{{ vlans }}"
-       # when: item.vlan-id is defined
         state: merged
+      loop: "{{ vlans }}"
+       # when: item.vlan-id is defined
+        
 
 
    # - name: Create VLANs
