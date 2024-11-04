@@ -4,7 +4,7 @@
   gather_facts: no
   vars:
     vlans:
-      - name: VLAN10
+      - name: vlan10
         vlan_id: 10
       - name: VLAN20
         vlan_id: 20
