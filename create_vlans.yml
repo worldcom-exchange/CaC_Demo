@@ -11,6 +11,7 @@
       - name: vlan30
         vlan_id: 30
 
+"""
   tasks:
     - name: Create vlans
       junipernetworks.junos.junos_vlans:
@@ -30,3 +31,4 @@
     - name: Print vlans
       debug:
         var: output.stdout_lines
+"""
