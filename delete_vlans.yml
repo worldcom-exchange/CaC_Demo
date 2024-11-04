@@ -4,7 +4,7 @@
   gather_facts: no
   vars:
     vlans:
-      - name: vlan10
+      - name: VLAN10
         vlan_id: 10
       - name: VLAN20
         vlan_id: 20
@@ -12,7 +12,7 @@
         vlan_id: 30
 
   tasks:
-    - name: Create vlans
+    - name: Delete vlans
       junipernetworks.junos.junos_vlans:
         config:
           - name: "{{ item.name }}"

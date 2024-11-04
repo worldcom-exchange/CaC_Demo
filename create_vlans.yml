@@ -4,11 +4,11 @@
   gather_facts: no
   vars:
     vlans:
-      - name: VLAN10
+      - name: vlan10
         vlan_id: 10
-      - name: VLAN20
+      - name: vlan20
         vlan_id: 20
-      - name: VLAN30
+      - name: vlan30
         vlan_id: 30
 
   tasks:
