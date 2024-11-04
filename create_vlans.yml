@@ -11,24 +11,23 @@
       - name: vlan30
         vlan_id: 30
 
-"""
-  tasks:
-    - name: Create vlans
-      junipernetworks.junos.junos_vlans:
-        config:
-          - name: "{{ item.name }}"
-            vlan_id: "{{ item.vlan_id }}"
-        state: merged
-      loop: "{{ vlans }}"
-      when: item.vlan_id is defined
+
+  # tasks:
+  #   - name: Create vlans
+  #     junipernetworks.junos.junos_vlans:
+  #       config:
+  #         - name: "{{ item.name }}"
+  #           vlan_id: "{{ item.vlan_id }}"
+  #       state: merged
+  #     loop: "{{ vlans }}"
+  #     when: item.vlan_id is defined
         
 
-    - name: Get vlans
-      ios_command:
-        commands: show vlans
-      register: output
+  #   - name: Get vlans
+  #     ios_command:
+  #       commands: show vlans
+  #     register: output
 
-    - name: Print vlans
-      debug:
-        var: output.stdout_lines
-"""
+  #   - name: Print vlans
+  #     debug:
+  #       var: output.stdout_lines
