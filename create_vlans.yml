@@ -15,8 +15,8 @@
     - name: Create vlans
       junipernetworks.junos.junos_vlans:
         config:
-          - name: {{ item.name }}
-            vlan_id: {{ vlan-id }}
+          - name: "{{ item.name }}"
+            vlan_id: "{{ vlan-id }}"
         loop: "{{ vlans }}"
         state: merged
 
