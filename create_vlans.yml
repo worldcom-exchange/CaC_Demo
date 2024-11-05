@@ -24,7 +24,7 @@
         
   tasks:
     - name: Get vlans
-      junipernetworks.junos.junos_commands:
+      junipernetworks.junos.junos_command:
         commands: show vlans
       register: output
 
