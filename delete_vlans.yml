@@ -19,7 +19,7 @@
             vlan_id: "{{ item.vlan_id }}"
         state: deleted
       loop: "{{ vlans }}"
-      when: item.vlan-id is defined
+      when: item.vlan_id is defined
         
 
 
