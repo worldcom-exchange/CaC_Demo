@@ -31,7 +31,7 @@
     #  when: item.vlan_id is defined
 
     - name: Get vlans
-      ios_command:
+      junipernetworks.junos.junos_command:
         commands: show vlans
       register: output
 
