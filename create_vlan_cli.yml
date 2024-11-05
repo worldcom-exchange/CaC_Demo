@@ -13,7 +13,7 @@
 
   tasks:
     - name: Enter configuration mode
-      ansible.builtin.shell: "cli -c 'configure'"
+      ansible.builtin.shell: "configure"
       register: enter_config_mode
       ignore_errors: true
 
