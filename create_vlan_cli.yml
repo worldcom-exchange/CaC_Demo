@@ -13,7 +13,7 @@
 
   tasks:
     - name: Enter configuration mode
-      ansible.builtin.shell: "cli -c 'configure"
+      ansible.builtin.shell: "cli -c 'configure'"
       register: enter_config_mode
       ignore_errors: true
 
@@ -24,8 +24,7 @@
         
 
     - name: Get vlans
-      ios_command:
-        commands: show vlans
+      ansible.builtin.shell: "cli -c 'show vlans'"
       register: output
 
     - name: Print vlans
