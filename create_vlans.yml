@@ -22,7 +22,7 @@
       loop: "{{ vlans }}"
       when: item.vlan_id is defined
         
-  tasks:
+  #tasks:
     - name: Get vlans
       ios_command:
         commands: show vlans
