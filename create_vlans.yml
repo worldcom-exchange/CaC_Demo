@@ -12,19 +12,19 @@
         vlan_id: 30
 
 
-  tasks:
-    - name: Create vlans
-      junipernetworks.junos.junos_vlans:
-        config:
-          - name: vlan10
-            vlan_id: 10
-        state: merged
-      loop: "{{ vlans }}"
-      when: item.vlan_id is defined
+  # tasks:
+  #   - name: Create vlans
+  #     junipernetworks.junos.junos_vlans:
+  #       config:
+  #         - name: vlan10
+  #           vlan_id: 10
+  #       state: merged
+  #     loop: "{{ vlans }}"
+  #     when: item.vlan_id is defined
         
-  #tasks:
+  tasks:
     - name: Get vlans
-      ios_command:
+      junipernetworks.junos.junos_commands:
         commands: show vlans
       register: output
 
