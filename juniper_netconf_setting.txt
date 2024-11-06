@@ -1,0 +1,11 @@
+
+Netconf was causing errors when running playbooks against the switch.
+To fix we had to turn off rfc compliant mode
+
+Commands:
+
+- configure
+- delete system services netconf rfc-compliant
+- commit 
+- exit
+- show configuration system services netconf
