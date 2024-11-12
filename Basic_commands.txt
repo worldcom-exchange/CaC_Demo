@@ -1,0 +1,17 @@
+1) Switching between modes and saving changes:
+    - configure     <- puts you in configuration mode, you're in operational mode by default
+    - exit     <- sends you back a level
+    - commit    <- saves changes
+
+2) Creating vlans
+    - set vlans <vlan name> vlan-id <id>    <- Creates a vlan with the specified name and id
+    - show vlans    <- displays vlans configured on ths switch
+
+3) Creating interface ranges
+    - edit interfaces interface-range <range name>      <- puts you in edit mode for the interface range with the given name
+                                                            (if no range exists with that name, it creates one)
+    - set member-range <start interface> to <end interface>      <- adds the specified interfaces to the range. This commands
+                                                                    must be run from within edit mode for an interface range
+                                                                    (you have to run the command above immediately before running
+                                                                    this one. Use 'exit' to leave edit mode and go back to configuration
+                                                                    mode).
