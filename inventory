@@ -1,0 +1,8 @@
+[switches]
+10.11.92.187
+
+[switches:vars]
+ansible_connection=ansible.netcommon.netconf
+ansible_network_os=junipernetworks.junos.junos
+ansible_user=admin
+ansible_password=Worldcom1!
